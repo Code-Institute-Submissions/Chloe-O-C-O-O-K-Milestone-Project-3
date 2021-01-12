@@ -43,6 +43,24 @@ a.nav-title-styling {
   margin-bottom: 2rem;
 }
 
+/*Footer*/
+
+footer {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  color: hsla(210, 10%, 23%, 0.6);
+  text-align: center;
+}
+
+.footer-links a i {
+  color: hsla(210, 10%, 23%, 0.6);
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 0 10px;
+  text-align: center;
+}
+
 /*Media Queries*/
 
 /*-Tablet and mobile  992px */
