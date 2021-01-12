@@ -11,8 +11,8 @@ a.nav-title-styling {
 /*-Header image styling-*/
 
 .page-header {
-  background-image: url("./assets/images/jumbotron-background.jpg");
-  height: 100vh;
+  background-image: url("/assets/images/jumbotron-background.jpg");
+  height: 70vh;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -28,20 +28,30 @@ a.nav-title-styling {
 }
 
 .jumbotron-header {
-  font-size: 60px;
-  font-weight: 400;
+  font-size: 70px;
+  font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 5px;
 }
 
 .jumbotron-divider {
   width: 75px;
 }
 
-/*-Jumbotron styling-*/
-
 .section-divider {
   width: 200px;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+/*Media Queries*/
+
+/*-Tablet and mobile  992px */
+
+@media only screen and (max-width: 992px) {
+  /*Header & Jumbotron*/
+
+  .page-header {
+    background-size: cover;
+    background-attachment: scroll; /*stops image scrolling on mobile*/
+    background-position: center;
+  }}
