@@ -23,13 +23,11 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <title>
-      C O O K | Recipe Finder
-    </title>
+    <title>C O O K | Recipe Finder</title>
   </head>
   <body>
     <!--header and nav-->
-<header class="row page-header">
+    <header class="row page-header">
       <div class="col-12">
         <nav class="navbar navbar-expand-md navbar-light">
           <a href="index.html" class="navbar-brand nav-icon-styling">
@@ -52,11 +50,11 @@
               </li>
               <li class="nav-item">
                 <a
-              class="btn btn-outline-dark btn-sm"
-              href="login.html"
-              role="button"
-              >Log in | Sign up</a
-            >
+                  class="btn btn-outline-dark btn-sm"
+                  href="login.html"
+                  role="button"
+                  >Log in | Sign up</a
+                >
               </li>
             </ul>
           </div>
@@ -65,16 +63,53 @@
         <div class="jumbotron jumbotron-fluid text-center">
           <h1 class="jumbotron-header">- C O O K -</h1>
           <p class="lead"><i class="fas fa-utensils"></i></p>
-          <hr class="jumbotron-divider" />
+          <hr class="page-divider" />
           <p>Your recipe finder</p>
         </div>
       </div>
     </header>
 
     <!--Main body-->
-     
+    <div class="container text-center mt-5 mx-auto">
+      <form class="form-signin">
+        <p class="lead"><i class="fas fa-utensil-spoon"></i></p>
+        <p class="mx-4 font-weight-normal">Please sign in</p>
+        <hr class="page-divider" />
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input
+          type="email"
+          id="inputEmail"
+          class="form-control"
+          placeholder="Email address"
+          required
+          autofocus
+        />
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input
+          type="password"
+          id="inputPassword"
+          class="form-control"
+          placeholder="Password"
+          required
+        />
+        <div>
+            <hr class="page-divider" />
+          <a
+            class="btn btn-outline-dark btn-sm"
+            type="submit"
+            href="login.html"
+            role="button"
+            >Log in</a
+          >
+
+          <p class="mt-4">
+            Not yet a member?<a class="nav-link" href="register.html">Register here</a>
+          </p>
+        </div>
+      </form>
+    </div>
     <!--/Footer section-->
-<footer class="container">
+    <footer class="container">
       <div class="row">
         <div class="col-12">
           <div class="footer-links">
@@ -95,7 +130,6 @@
       </div>
     </footer>
 
-    
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
