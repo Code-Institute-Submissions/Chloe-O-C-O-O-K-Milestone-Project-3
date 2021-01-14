@@ -1,45 +1,151 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# C O O K
 
-Welcome Chloe-O,
+For this project, I have used HTML, CSS & Javascript(and no external libraries/frameworks) to put together a site that specialises in bespoke tours to the Chernobyl and Pripyat areas.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+[Link to my deployed site with GitHub Pages]()
 
-## Gitpod Reminders
+![Screenshot of site's Index page]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+---
 
-`python3 -m http.server`
+# User Experience (UX)
 
-A blue button should appear to click: *Make Public*,
+-
 
-Another blue button should appear to click: *Open Browser*.
+## User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## First Time Visitor Goals
 
-A blue button should appear to click: *Make Public*,
+-
+-
+-
 
-Another blue button should appear to click: *Open Browser*.
+## Returning Time Visitor Goals & Frequent Time Visitor Goals
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+-
 
-## Updates Since The Instructional Video
+## Design
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Colour Scheme
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+-
+-
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Typography
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- Roboto from Google Fonts is the font used throughout the site
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Imagery
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+-
+-
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Wireframes
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- 
 
---------
+# Technologies Used
 
-Happy coding!
+Languages used for this site:
+
+- [JavaScript](https://www.javascript.com/)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [Python](https://www.python.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+- [MongoDB](https://www.mongodb.com/cloud/atlas)
+
+## Frameworks, Libraries & Programs Used
+
+1. [Google Fonts:](https://fonts.google.com/)
+   - Google fonts were used to import the Roboto font which is used throughout the site
+2. [Font Awesome:](https://fontawesome.com/)
+   - Font Awesome was used on all pages throughout the website to add icons to the page
+3. [GitHub:](https://github.com/)
+   - GitHub is used to store the project, GitHub pages was used to publish the site
+4. [Balsamiq:](https://balsamiq.com/)
+   - Balsamiq was used to create the wireframes for the site
+
+---
+
+# Features
+
+
+---
+
+# Testing
+
+## Code Validation
+
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+
+### HTML
+
+
+---
+
+### CSS
+
+![CSS](.xxxx)
+
+---
+
+### JavaScript
+
+
+## Testing User Stories from User Experience (UX) Section
+
+## First Time Visitor Goals
+
+- As a first time user, 
+-
+-
+-
+
+## Returning Time Visitor Goals & Frequent Time Visitor Goals
+
+-
+-
+
+## Further Testing
+
+-
+-
+-
+---
+
+# Bugs/Known Issues
+
+-
+-
+-
+
+# Resolved Issues
+
+- 
+-
+-
+
+![TEXT](.xxxx)
+
+# Deployment
+
+## GitHub Pages
+
+As with my first milestone project, I had the same issue whereby, after deployment, I had the revise all of the image file paths and CSS links as these were not relative and did not work correctly when deployed.
+
+- 
+-
+-
+
+---
+
+# Credit
+
+- [Pexels](https://www.pexels.com/) Stock images
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+- [Font Awesome](https://fontawesome.com/) for icons used on the site
+- [Google Fonts](https://fonts.google.com/) Roboto font
+
+---

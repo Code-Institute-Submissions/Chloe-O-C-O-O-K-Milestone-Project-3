@@ -1,10 +1,14 @@
 # Flask class imported #
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash
+if os.path.exists("env.py"):
+    import env
+
 
 # 2 spaces between functions for PEP8 compliance #
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY")
 
 
 @app.route("/")
@@ -17,8 +21,10 @@ def recipes():
     return render_template("recipes.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
+    if request.method == "POST":
+        flash("Thanks {}, for logging in!".format(request.form.get("email")))
     return render_template("login.html")
 
 
@@ -34,4 +40,5 @@ if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
-        debug=True) 
+        debug=True)
+        

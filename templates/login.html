@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 <!--Main body-->
+
     <div class="container text-center mt-5">
+
+        <!--Can be removed following completion of tutorial-->
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+      </ul>
+    {% endif %}
+{% endwith %}
+
         <!--Log in form-->
       <form method="POST" name="login" class="form-width">
         <p class="lead"><i class="fas fa-utensil-spoon"></i></p>
@@ -17,7 +31,6 @@
           placeholder="Enter your email address"
           required
           autofocus
-          required
         />
         <!--Password input-->
         <label for="password" class="sr-only">Password</label>
