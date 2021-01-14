@@ -11,7 +11,7 @@ a.nav-icon-styling {
 /*-Header image styling-*/
 
 .page-header {
-  background-image: url("/assets/images/jumbotron-background.jpg");
+  background-image: url("{{  url_for('static', filename ='images/jumbotron-background.jpg')  }}"); /*Doesn't load!*/
   height: 70vh;
   background-size: cover;
   background-attachment: fixed;
