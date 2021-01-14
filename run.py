@@ -27,16 +27,11 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/index_copy.html")
-def index_test():
-    return render_template("index_copy.html")
+# change to false before submitting #
 
 
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
-        debug=True)
-
-
-# change to false before submitting #
+        debug=True) 
