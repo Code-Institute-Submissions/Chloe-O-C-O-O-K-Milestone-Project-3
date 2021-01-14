@@ -2,7 +2,7 @@
 
 For this project, I have used HTML, CSS & Javascript(and no external libraries/frameworks) to put together a site that specialises in bespoke tours to the Chernobyl and Pripyat areas.
 
-[Link to my deployed site with GitHub Pages]()
+[Link to my deployed site on Heroku](https://cook-milestone3.herokuapp.com/)
 
 ![Screenshot of site's Index page]()
 
