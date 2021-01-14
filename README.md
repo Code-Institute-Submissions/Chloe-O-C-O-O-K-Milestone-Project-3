@@ -131,7 +131,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 # Deployment
 
-## GitHub Pages
+## Heroku
+
+- Create Heroku app
+- Connect Git remote
+- Add requirements.txt(so Heroku knows what libraries we are using) and Procfile files(so Heroku knows we are running a Python app)
+
+## GitHub 
 
 As with my first milestone project, I had the same issue whereby, after deployment, I had the revise all of the image file paths and CSS links as these were not relative and did not work correctly when deployed.
 
