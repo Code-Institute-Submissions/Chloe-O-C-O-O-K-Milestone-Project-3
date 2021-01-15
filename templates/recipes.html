@@ -72,6 +72,12 @@
     </header>
 
     <!--Main body-->
+
+    {% for recipe in recipes %}
+        {{ recipe.recipe_name}}<br>
+        {{ recipe.ingrdients }}<br>
+        {{ recipes.category_name }}<br>
+    {% endfor %}
      
     <!--/Footer section-->
 <footer class="container">
