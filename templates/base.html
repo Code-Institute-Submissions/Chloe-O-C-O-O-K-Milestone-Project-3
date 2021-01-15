@@ -3,18 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!--Bootstrap CDN-->
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+
+    <!--Google Font API-->
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+
     <!--Font Awesome CDN-->
+
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -22,13 +29,16 @@
       crossorigin="anonymous"
     />
         <!--CSS--> 
+
     <link rel="stylesheet" href="{{  url_for('static', filename ='style.css')  }}" type="text/css"/>
     <title>
       C O O K | Recipe Finder
     </title>
   </head>
   <body>
-    <!--header and nav-->
+
+    <!--nav bar, collapses on smaller displays-->
+
 <header class="row page-header">
       <div class="col-12">
         <nav class="navbar navbar-expand-md navbar-light">
@@ -61,7 +71,9 @@
             </ul>
           </div>
         </nav>
+
         <!--jumbotron header-->
+
         <div class="jumbotron jumbotron-fluid text-center">
           <h1 class="jumbotron-header">- C O O K -</h1>
           <p class="lead"><i class="fas fa-utensils"></i></p>
@@ -71,11 +83,13 @@
       </div>
     </header>
     
+<!--Contents for pages injected here using Flask template inheritance-->
 
     {% block content %}
     {% endblock %}
 
     <!--/Footer section-->
+
 <footer class="container">
       <div class="row">
         <div class="col-12">
@@ -95,11 +109,15 @@
           </div>
         </div>
       </div>
+
+      <!--NEED TO CENTRE-->
+      
       <div class="row col-12">
-          <p class="copyright text-secondary"><span id="copyright" class="text-center"></span></p> <!--NEED TO CENTRE-->
+          <p class="copyright text-secondary"><span id="copyright" class="text-center"></span></p> 
       </div>
     </footer>
 
+<!--JQuery & Bootstrap CDNs-->
     
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -116,6 +134,9 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+
+<!--Displays current year on page using JQuery-->
+
     <script>
 $("#copyright").text(new Date().getFullYear());
 </script>

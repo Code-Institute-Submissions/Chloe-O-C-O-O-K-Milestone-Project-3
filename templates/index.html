@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<!--Main body-->
+
+<!--Page intro - explains purpose of site -->
 
 <div class="container">
         <div class="row featurette mt-5">
@@ -15,8 +16,13 @@
         </div>
 </div>
 
-<p>TEST!</p>
+<!--For loop which iterates through the records in the recipes collection from MongoDB-->
 
-
+    {% for recipe in recipes %}
+        {{ recipe.recipe_name}}<br>
+        {{ recipe.ingredients }}<br>
+        {{ recipe.method }}<br>
+        {{ recipe.category_name }}<br>
+    {% endfor %}
 
 {% endblock %}

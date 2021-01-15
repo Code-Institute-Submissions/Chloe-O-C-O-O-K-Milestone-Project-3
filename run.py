@@ -1,4 +1,4 @@
-# Flask class imported #
+# Flask classes imported #
 import os
 from flask import (
     Flask, render_template, request, 
@@ -9,7 +9,14 @@ if os.path.exists("env.py"):
     import env
 
 
+# App variable defined#
+
+
 app = Flask(__name__)
+
+
+# Config vars defined and added to Heroku#
+
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -23,10 +30,9 @@ def index():
     return render_template("index.html")
 
 
-# @app.route("/recipes")#
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = mongo.db.recipes.find()
+@app.route("/recipes")
+def recipes():
+    recipes = mongo.db.tasks.find()
     return render_template("recipes.html", recipes=recipes)
 
 
