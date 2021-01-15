@@ -18,7 +18,6 @@ a.nav-icon-styling {
   background-position: center;
 }
 
-
 /*-Jumbotron-*/
 
 .jumbotron {
@@ -52,7 +51,14 @@ a.nav-icon-styling {
   margin: 0 auto;
 }
 
+.register-link a {
+  color: hsla(210, 10%, 23%, 0.6);
+  text-decoration: none;
+}
 
+.register-link a:hover {
+  color: hsla(210, 10%, 23%, 0.712);
+}
 
 /*Footer*/
 
@@ -70,6 +76,10 @@ footer {
   font-size: 20px;
   padding: 0 10px;
   text-align: center;
+}
+
+.footer-links a i:hover {
+    color: hsla(210, 10%, 23%, 0.712);
 }
 
 /*Media Queries*/
