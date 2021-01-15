@@ -1,6 +1,13 @@
     {% extends "base.html" %}
     {% block content %}
 
+<!--For loop which iterates through the records in the recipes collection from MongoDB-->
 
+    {% for recipe in recipes %}
+        {{ recipe.recipe_name}}<br>
+        {{ recipe.ingredients }}<br>
+        {{ recipe.method }}<br>
+        {{ recipe.category_name }}<br>
+    {% endfor %}
 
     {% endblock %}
