@@ -123,7 +123,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 # Resolved Issues
 
-- 
+- When creating Procfile, I originally had typed 'web:python run.py' instead of 'web: python run.py'- this meant my Heroku app did not run and threw and Application Error, Cormac @ Code Institute spotted this
 -
 -
 
