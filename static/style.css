@@ -3,10 +3,16 @@ body {
 }
 /*-Navigation bar styling*/
 
-a.nav-icon-styling {
-  color: rgba(0, 0, 0, 0.5);
+.nav-styling a {
+  color: #343a40;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 10px 5px 5px 0;
 }
 
+.nav-styling a:hover {
+    color: hsla(210, 10%, 23%, 0.712);
+}
 
 /*-Header image styling-*/
 
