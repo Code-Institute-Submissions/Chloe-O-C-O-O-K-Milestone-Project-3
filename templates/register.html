@@ -1,6 +1,33 @@
-    {% extends "base.html" %}
-    {% block content %}
+{% extends "base.html" %}
+{% block content %}
 
+<div class="container text-center mt-5">
+
+    <!--Log in form-->
+
+    <form class="form-width" method="POST" action="{{ url_for('register') }}" name="login">
+        <p class="lead"><i class="fas fa-utensil-spoon"></i></p>
+        <p class="font-weight-normal">Register below</p>
+        <hr class="page-divider" />
+
+        <!--Email input-->
+
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Email address" required
+            autofocus />
+
+
+        <!--Password input-->
+
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
+
+
+        <hr class="page-divider" />
+
+        <!--Submit button-->
+        <button class="btn btn-outline-dark btn-sm" type="submit">Register <i class="fas fa-sign-in-alt"></i></button>
+    </form>
 
 
     {% endblock %}

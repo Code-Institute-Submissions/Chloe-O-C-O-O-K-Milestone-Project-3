@@ -1,7 +1,7 @@
 # Flask classes imported #
 import os
 from flask import (
-    Flask, render_template, request, 
+    Flask, render_template, request,
     flash, redirect, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -45,6 +45,22 @@ def login():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+    if existing_user:
+        flash("Email is already registered - Please log in")
+        return redirect(url_for("register"))
+
+    register = {
+        "username": request.form.get("username").lower(),
+        "password": generate_password_hash(request.form.get("password"))
+    }
+    mongo.db.users.insert_one(register)
+
+    session["user"] = request.form.get("username").lower()
+    flash("Registeration complete!")
     return render_template("register.html")
 
 
