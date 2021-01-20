@@ -5,30 +5,30 @@
 
 <div class="container text-center mt-5">
 
-    <!--Log in form-->
+    <!--Login form-->
 
     <form class="form-width" method="POST" action="{{ url_for('login') }}" name="login">
         <p class="lead"><i class="fas fa-utensil-spoon"></i></p>
-        <p class="font-weight-normal">Please sign in</p>
+        <p class="font-weight-normal">Log in below</p>
         <hr class="page-divider" />
 
         <!--Email input-->
 
-        <label for="email" class="sr-only">Email address</label>
-        <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required
             autofocus />
 
 
         <!--Password input-->
 
         <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" minlength="5" maxlength="15" required />
 
 
         <hr class="page-divider" />
 
         <!--Submit button-->
-        <button class="btn btn-outline-dark btn-sm" type="submit">Log in</button>
+        <button class="btn btn-outline-dark btn-sm" type="submit">Log in <i class="fas fa-sign-in-alt"></i></button>
     </form>
 
     <!--Link to register page-->

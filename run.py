@@ -37,12 +37,6 @@ def recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    # if request.method == "POST":#
-    return render_template("login.html")
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -62,6 +56,32 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registeration complete!")
     return render_template("register.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # Checks if a username already exists in db #
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # Checks that hashed password matches user input #
+            if check_password_hash(
+               existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome back {}!".format(request.form.get("username")))
+            else:
+                # Password doesn't match, redirects to login page#
+                flash("Password incorrect, please try again")
+                return redirect(url_for("login"))
+
+        else:
+            # User doesn't exist, redirects to login page #
+            flash("Incorrect username and/or password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
 
 
 # change to false before submitting #
