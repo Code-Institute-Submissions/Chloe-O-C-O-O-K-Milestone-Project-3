@@ -71,6 +71,8 @@ Languages used for this site:
 
 # Features
 
+- Defensive programming, 'required' attribute used to stop users being able to register a new user with blank spaced
+- Min and Max length used for usernames and passwords and patterns used for further defensive programming
 
 ---
 

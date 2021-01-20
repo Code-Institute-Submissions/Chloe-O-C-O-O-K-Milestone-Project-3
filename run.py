@@ -49,18 +49,18 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-    if existing_user:
-        flash("Email is already registered - Please log in")
-        return redirect(url_for("register"))
+        if existing_user:
+            flash("User is already registered - Please log in")
+            return redirect(url_for("register"))
 
-    register = {
-        "username": request.form.get("username").lower(),
-        "password": generate_password_hash(request.form.get("password"))
-    }
-    mongo.db.users.insert_one(register)
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
 
-    session["user"] = request.form.get("username").lower()
-    flash("Registeration complete!")
+        session["user"] = request.form.get("username").lower()
+        flash("Registeration complete!")
     return render_template("register.html")
 
 

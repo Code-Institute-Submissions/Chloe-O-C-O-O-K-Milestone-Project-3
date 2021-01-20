@@ -3,7 +3,7 @@
 
 <div class="container text-center mt-5">
 
-    <!--Log in form-->
+    <!--Register form-->
 
     <form class="form-width" method="POST" action="{{ url_for('register') }}" name="login">
         <p class="lead"><i class="fas fa-utensil-spoon"></i></p>
@@ -13,14 +13,14 @@
         <!--Email input-->
 
         <label for="username" class="sr-only">Username</label>
-        <input type="text" name="username" id="username" class="form-control" placeholder="Email address" required
+        <input type="text" name="username" id="username" class="form-control" placeholder="Email address" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required
             autofocus />
 
 
         <!--Password input-->
 
         <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" minlength="5" maxlength="15" required />
 
 
         <hr class="page-divider" />

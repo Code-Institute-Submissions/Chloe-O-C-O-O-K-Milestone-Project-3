@@ -66,6 +66,17 @@
         </div>
     </header>
 
+    <section>
+        <!--Flash messages-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h4>{{ message }}</h4>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
     <!--Contents for pages injected here using Flask template inheritance-->
 
     {% block content %}
