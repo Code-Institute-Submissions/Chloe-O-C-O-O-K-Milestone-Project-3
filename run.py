@@ -89,7 +89,7 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # User's username is taken from DB and displays on page#
-    username = mongo.db.users.find.one(
+    username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template("profile.html", username=username)
 # change to false before submitting #
