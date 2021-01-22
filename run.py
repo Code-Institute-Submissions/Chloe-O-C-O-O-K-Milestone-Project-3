@@ -106,6 +106,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
+
+
 if __name__ == "__main__":
     # change to false before submitting #
     app.run(

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row featurette mt-5">
+        <div class="col-md-7">
+            <h4><i class="fas fa-plus-circle"></i>Add a recipe</h4>
+
+        </div>
+        <div class="col-md-5">
+            <img src="{{  url_for('static', filename ='images/roast-chicken.jpg')  }}" alt="XXXXXX">
+        </div>
+    </div>
+
+{% endblock %}

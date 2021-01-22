@@ -12,7 +12,7 @@
 
 
 <div class="container">
-    <a class="btn btn-outline-dark btn-sm mt-5" href="#" role="button">Add a new recipe</a>
+    <a class="btn btn-outline-dark btn-sm mt-5" href="{{  url_for('add_recipe')  }}" role="button">Add a new recipe</a>
     <div class="accordion accordion-flush">
         {% for recipe in recipes %}
         <div class="accordion-item mt-5">
