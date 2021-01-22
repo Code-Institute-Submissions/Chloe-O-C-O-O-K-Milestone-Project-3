@@ -50,6 +50,9 @@
                         <li class="nav-item nav-styling">
                             <a href="{{  url_for('profile', username=session['user'])  }}">Profile</a>
                         </li>
+                        <li class="nav-item nav-styling">
+                            <a href="{{  url_for('logout')  }}">Log out</a>
+                        </li>
                         <li class="nav-item">
                             <a class="btn btn-outline-dark btn-sm" href="{{  url_for('login')  }}" role="button">Log in
                                 | Sign up</a>
