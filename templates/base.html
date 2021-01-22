@@ -44,6 +44,7 @@
                         <li class="nav-item nav-styling">
                             <a href="{{  url_for('index')  }}">Home</a>
                         </li>
+                        {% if session.user %}
                         <li class="nav-item nav-styling">
                             <a href="{{  url_for('recipes')  }}">Recipes</a>
                         </li>
@@ -53,9 +54,11 @@
                         <li class="nav-item nav-styling">
                             <a href="{{  url_for('logout')  }}">Log out</a>
                         </li>
+                        {% else %}
                         <li class="nav-item">
                             <a class="btn btn-outline-dark btn-sm" href="{{  url_for('login')  }}" role="button">Log in
-                                | Sign up</a>
+                                | Register</a>
+                            {% endif %}
                         </li>
                     </ul>
                 </div>
