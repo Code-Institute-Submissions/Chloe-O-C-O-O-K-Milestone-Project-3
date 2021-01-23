@@ -7,7 +7,8 @@
 
             <form class="form-width" method="POST" action="">
                 <h4 class="mb-3"><i class="fas fa-plus-circle"></i>Add a recipe</h4>
-                <p><i class="fas fa-exclamation"></i> Seperate ingredients and method steps using a comma</p>
+                <p class="text-muted"><i class="fas fa-exclamation"></i> Seperate ingredients and method steps using a
+                    comma</p>
 
                 <!--Recipe name-->
 
@@ -15,7 +16,14 @@
                 <input type="text" name="recipe_name" id="recipe_name" class="form-control" placeholder="Recipe name"
                     required autofocus />
 
-                <!--Category-->
+                <!--Category - loops through category db collection to display each category-->
+
+                <select class="form-select mt-3" id="category_name" name="category_name" required>
+                    <option selected>Recipe category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
 
 
                 <!--Ingredients-->
