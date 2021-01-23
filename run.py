@@ -108,11 +108,10 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    # getlist? for ingredients or method? - ADD DATE ADDED#
     if request.method == "POST":
         recipe = {
-            "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
+            "category_name": request.form.get("category_name"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
             "created_by": session["user"]
