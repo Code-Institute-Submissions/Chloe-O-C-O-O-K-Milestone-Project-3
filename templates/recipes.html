@@ -29,13 +29,13 @@
                         <li>{{ recipe.category_name }}</li>
                         <li>{{ recipe.ingredients }}</li>
                         <li>{{ recipe.method }}</li>
-                        <li class="text_muted fst-italic"> added by {{ recipe.created_by }}</li>
+                        <li class="text_muted fst-italic"> added by <span class="fw-bold"> {{ recipe.created_by }} </span> </li>
                     </ul>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-    
+
 </div>
 {% endblock %}

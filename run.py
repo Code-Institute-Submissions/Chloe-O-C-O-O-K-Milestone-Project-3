@@ -116,7 +116,7 @@ def add_recipe():
             "method": request.form.get("method"),
             "created_by": session["user"]
         }
-        mongo.db.tasks.insert_one(recipe)
+        mongo.db.recipes.insert_one(recipe)
         flash("Recipe added successfully!")
         return redirect(url_for("recipes"))
 
