@@ -5,11 +5,26 @@
     <div class="row featurette mt-5">
         <div class="col-md-7">
             <h4><i class="fas fa-plus-circle"></i>Add a recipe</h4>
+            <form class="form-width" method="POST" action="">
 
+                <!--Recipe name-->
+
+                <label for="recipename" class="sr-only">Recipe name</label>
+                <input type="text" name="recipename" id="recipename" class="form-control" placeholder="Recipe name"
+                    required autofocus />
+
+                <label for="ingredients" class="sr-only">Ingredients</label>
+                <input type="text" name="ingredients" id="ingredients" class="form-control mt-3"
+                    placeholder="Ingredients" required autofocus />
+
+                <!--Submit button-->
+                <button class="btn btn-outline-dark btn-sm mt-3" type="submit">Submit your recipe <i
+                        class="fas fa-sign-in-alt"></i></button>
+            </form>
         </div>
         <div class="col-md-5">
             <img src="{{  url_for('static', filename ='images/roast-chicken.jpg')  }}" alt="XXXXXX">
         </div>
     </div>
-
+</div>
 {% endblock %}
