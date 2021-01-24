@@ -38,6 +38,9 @@
                             <a href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}" class="link-secondary">
                                 <i class="fas fa-pen"></i>
                             </a>
+                            <a href="{{  url_for('delete_recipe', recipe_id=recipe._id)  }}" class="link-secondary ml-2">
+                                <i class="fas fa-times"></i>
+                            </a>
                         </div>
                         {% endif %}
                         <p class="text-muted fst-italic small-text"> Category: {{ recipe.category_name }}</p>
