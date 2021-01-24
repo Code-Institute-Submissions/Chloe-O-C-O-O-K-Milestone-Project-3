@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row featurette mt-5">
+        <div class="col-md-7">
+
+            <form class="form-width" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+                <h4 class="mb-3"><i class="fas fa-plus-circle"></i>Edit a recipe</h4>
+                <p class="text-muted"><i class="fas fa-exclamation"></i> Seperate ingredients and method steps using a
+                    comma</p>
+
+                <!--Recipe name-->
+
+                <label for="recipe_name" class="sr-only">Recipe name</label>
+                <input type="text" name="recipe_name" id="recipe_name" class="form-control" placeholder="Recipe name"
+                    required autofocus />
+
+                <!--Category - loops through category db collection to display each category-->
+
+                <select class="form-select mt-3" for="recipe_name" id="category_name" name="category_name" required>
+                    <option selected>Recipe category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+
+                <!--Ingredients-->
+
+                <label for="ingredients" class="sr-only">Ingredients</label>
+                <input type="text" name="ingredients" id="ingredients" class="form-control mt-3"
+                    placeholder="Ingredients" required autofocus />
+
+                <!--Method-->
+
+                <label for="method" class="sr-only">Method</label>
+                <input type="text" name="method" id="method" class="form-control mt-3" placeholder="Method" required
+                    autofocus />
+
+                <!--Submit button-->
+                <button class="btn btn-outline-dark btn-sm mt-3" type="submit">Edit your recipe <i
+                        class="fas fa-sign-in-alt"></i></button>
+            </form>
+        </div>
+        <div class="col-md-5">
+            <img src="{{  url_for('static', filename ='images/roast-chicken.jpg')  }}" alt="XXXXXX">
+        </div>
+    </div>
+</div>
+{% endblock %}
