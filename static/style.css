@@ -1,6 +1,11 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+.small-text {
+    font-size: 12px;
+}
+
 /*-Navigation bar styling*/
 
 .nav-styling a {

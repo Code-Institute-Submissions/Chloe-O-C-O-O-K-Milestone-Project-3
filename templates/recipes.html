@@ -18,19 +18,21 @@
         <div class="accordion-item mt-5">
             <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse-{{ recipe._id }}" aria-expanded="false" aria-controls="collapse-{{ recipe._id }}">
+                    data-bs-target="#collapse-{{ recipe._id }}" aria-expanded="false"
+                    aria-controls="collapse-{{ recipe._id }}">
                     {{ recipe.recipe_name}}
                 </button>
             </h2>
             <div id="collapse-{{ recipe._id }}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    <ul>
-                        <li>{{ recipe.category_name }}</li>
-                        <li>{{ recipe.ingredients }}</li>
-                        <li>{{ recipe.method }}</li>
-                        <li class="text_muted fst-italic"> added by <span class="fw-bold"> {{ recipe.created_by }} </span> </li>
-                    </ul>
+                    <div>
+                        <p class="text-muted fst-italic small-text"> Category: {{ recipe.category_name }}</p>
+                        <p> Ingredients: <span class="fw-light">{{ recipe.ingredients }}</span></p>
+                        <p class="fw-light">{{ recipe.method }}</p>
+                        <p class="text-muted fst-italic small-text"> added by <span class="fw-bold">
+                                {{ recipe.created_by }} </span> </p>
+                    </div>
                 </div>
             </div>
         </div>
