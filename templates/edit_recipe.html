@@ -21,7 +21,11 @@
                 <select class="form-select mt-3" for="recipe_name" id="category_name" name="category_name" required>
                     <option selected>Recipe category</option>
                     {% for category in categories %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% if category.category_name == recipe.category_name %}
+                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                    {% else %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endif %}
                     {% endfor %}
                 </select>
 
