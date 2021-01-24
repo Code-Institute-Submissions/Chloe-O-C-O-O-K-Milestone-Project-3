@@ -13,18 +13,18 @@
                 <!--Recipe name-->
 
                 <label for="recipe_name" class="sr-only">Recipe name</label>
-                <input type="text" name="recipe_name" id="recipe_name" class="form-control" placeholder="Recipe name"
-                    required autofocus />
+                <input type="text" name="recipe_name" id="recipe_name" class="form-control"
+                    value="{{- recipe.recipe_name -}}" required autofocus />
 
                 <!--Category - loops through category db collection to display each category-->
 
                 <select class="form-select mt-3" for="recipe_name" id="category_name" name="category_name" required>
-                    <option selected>Recipe category</option>
+                    <option>Recipe category</option>
                     {% for category in categories %}
                     {% if category.category_name == recipe.category_name %}
-                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
                     {% else %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                     {% endif %}
                     {% endfor %}
                 </select>
@@ -33,17 +33,23 @@
 
                 <label for="ingredients" class="sr-only">Ingredients</label>
                 <input type="text" name="ingredients" id="ingredients" class="form-control mt-3"
-                    placeholder="Ingredients" required autofocus />
+                    value="{{- recipe.ingredients -}}" required autofocus />
 
                 <!--Method-->
 
                 <label for="method" class="sr-only">Method</label>
-                <input type="text" name="method" id="method" class="form-control mt-3" placeholder="Method" required
-                    autofocus />
+                <input type="text" name="method" id="method" class="form-control mt-3" value="{{- recipe.method -}}"
+                    required autofocus />
 
                 <!--Submit button-->
-                <button class="btn btn-outline-dark btn-sm mt-3" type="submit">Edit your recipe <i
-                        class="fas fa-sign-in-alt"></i></button>
+
+                <a class="btn btn-outline-dark btn-sm mt-3" href="{{  url_for('add_recipe')  }}" role="button">Edit your
+                    recipe <i class="fas fa-check"></i></a>
+                <!--Cancel button-->
+
+                <a class="btn btn-outline-dark btn-sm mt-3" href="{{  url_for('recipes')  }}" role="button">Cancel
+                    <i class="fas fa-times"></i></a>
+
             </form>
         </div>
         <div class="col-md-5">
