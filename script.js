@@ -1,0 +1,1 @@
+var deleteRecipe = document.getElementById("deleteRecipe");

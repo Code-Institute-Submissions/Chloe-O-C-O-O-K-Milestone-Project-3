@@ -44,6 +44,10 @@
                         <li class="nav-item nav-styling">
                             <a href="{{  url_for('index')  }}">Home</a>
                         </li>
+                        <!--If a user is logged in(session cookie present) they can see the 'Recipes', 'Profile' & 'Log out' pages
+
+                        If a user is not logged in, they can only view the 'Home' & 'Log in|Register' page
+                        -->
                         {% if session.user %}
                         <li class="nav-item nav-styling">
                             <a href="{{  url_for('recipes')  }}">Recipes</a>
@@ -71,7 +75,6 @@
             <div class="jumbotron jumbotron-fluid text-center">
                 <h1 class="jumbotron-header">- C O O K -</h1>
                 <p class="lead"><i class="fas fa-utensils"></i></p>
-                <hr class="page-divider" />
                 <p>Your recipe finder</p>
             </div>
         </div>
