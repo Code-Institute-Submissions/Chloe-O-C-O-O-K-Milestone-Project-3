@@ -12,6 +12,15 @@
 
 
 <div class="container">
+
+    <div class="row mt-3">
+        <form class="col-12" action="{{ url_for('search') }}" method="POST">
+            
+            <input type="text" name="query" id="query" minlength="3" class="validate" placeholder="Search recipes..." required>
+            <label for="query"></label>
+            <button type="submit" class="btn btn-sm"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
     <h4>Recipes</h4>
     <a class="btn btn-outline-dark btn-sm mt-5 mb-4" href="{{  url_for('add_recipe')  }}" role="button">Add a new
         recipe</a>
