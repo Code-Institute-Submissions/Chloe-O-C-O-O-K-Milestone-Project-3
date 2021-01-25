@@ -4,17 +4,55 @@
 <div class="container">
     <div class="row featurette mt-5">
         <div class="col-md-7">
-            <h4>{{ username }}'s profile</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod amet dicta et aut tempore obcaecati
-                repudiandae facilis,
-                illum deserunt velit reiciendis itaque doloremque nulla deleniti facere voluptas ullam nostrum excepturi
-                reprehenderit
-                quisquam. Veniam tempora fugit at non deserunt repellendus delectus!</p>
+            <h4>{{ username }}'s profile <a class="link-dark" href="#"><i class="fas fa-pen"></i></a></h4>
+            <h5 class="mt-2">Your recipes</h5>
+            <div class="accordion accordion-flush">
+                {% for recipe in recipes %}
+                {% if session.user|lower == recipe.created_by|lower %}
+                <div class="accordion-item ">
+                    <div class="row">
+                        <h2 class="accordion-header" id="flush-headingOne">
+
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-{{ recipe._id }}" aria-expanded="false"
+                                aria-controls="collapse-{{ recipe._id }}">
+                                {{ recipe.recipe_name}}
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapse-{{ recipe._id }}" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div>
+                                <div>
+                                    <a href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}"
+                                        class="link-secondary">
+                                        <i class="fas fa-pen"></i>
+                                    </a>
+                                    <a href="{{  url_for('delete_recipe', recipe_id=recipe._id)  }}" id="delete-button"
+                                        class="link-secondary ml-2">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                </div>
+
+                                <p class="text-muted fst-italic small-text"> Category: {{ recipe.category_name }}</p>
+                                <p> Ingredients: <span class="fw-light">{{ recipe.ingredients }}</span></p>
+                                <p class="fw-light">{{ recipe.method }}</p>
+                                <p class="text-muted fst-italic small-text"> added by <span class="fw-bold">
+                                        {{ recipe.created_by }} </span> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
         <div class="col-md-5">
             <img src="{{  url_for('static', filename ='images/roast-chicken.jpg')  }}" alt="XXXXXX">
         </div>
     </div>
+</div>
 
 
 {% endblock %}

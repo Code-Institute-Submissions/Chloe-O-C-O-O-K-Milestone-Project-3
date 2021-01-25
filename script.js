@@ -1,1 +1,2 @@
-var deleteRecipe = document.getElementById("deleteRecipe");
+var confirmmodal = document.getElementById("modal{{ recipe._id }}");
+

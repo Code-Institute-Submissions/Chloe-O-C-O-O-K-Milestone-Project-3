@@ -27,17 +27,21 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+# When app is started, the homepage is rendered#
 def index():
     return render_template("index.html")
 
 
 @app.route("/recipes")
+# Returns recipes as list from DB#
 def recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/search", methods=["GET", "POST"])
+# Allows user to text search, which return matching queries
+# from recipe name, category & ingredients as defined in DB index #
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
@@ -45,6 +49,9 @@ def search():
 
 
 @app.route("/register", methods=["GET", "POST"])
+# A user can register for a new account, if the user is already
+# registered they will be redirected to register page, otherwise
+# they are taken to their profile page#
 def register():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
@@ -67,6 +74,7 @@ def register():
 
 
 @app.route("/login", methods=["GET", "POST"])
+# Allows users with registered accounts to log in #
 def login():
     if request.method == "POST":
         # Checks if a username already exists in db #
@@ -95,7 +103,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # User's username is taken from DB and displays on page#
+    # User's username and own recipes are taken from DB and display on page#
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -107,13 +115,17 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # Removes user from session cookies #
+    # Removes user from session cookies and logs the user out #
+    # and redirects to login page#
     flash("You've been logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
+# User can add a recipe by filling in the fields, these correlate
+# with fields in the DB - user receives feedback when
+# a recipe has been added successfully
 def add_recipe():
     if request.method == "POST":
         recipe = {
@@ -132,6 +144,8 @@ def add_recipe():
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+# Allows a user to edit or delete a recipe added by themselves,
+# they are only able to view recipes added by other users#
 def edit_recipe(recipe_id):
     if request.method == "POST":
         recipe_submit = {
@@ -151,6 +165,7 @@ def edit_recipe(recipe_id):
 
 
 @app.route("/delete_recipe/<recipe_id>")
+# User can delete their own recipes, this is removed from the DB#
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe deleted")
