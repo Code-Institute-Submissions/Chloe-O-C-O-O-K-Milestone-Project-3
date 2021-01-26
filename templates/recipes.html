@@ -3,18 +3,10 @@
 
 <!--For loop which iterates through the records in the recipes collection from MongoDB-->
 
-<!-- {% for recipe in recipes %}
-{{ recipe.recipe_name}}<br>
-{{ recipe.ingredients }}<br>
-{{ recipe.method }}<br>
-{{ recipe.category_name }}<br>
-{% endfor %} -->
-
-
 <div class="container">
 
     <div class="row">
-        <div class="mb-3 mt-5">
+        <div class="mt-5">
             <h4>Recipes</h4>
         </div>
     </div>
@@ -61,16 +53,15 @@
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     <div>
+                        <!--User logged in can only edit and delete their own recipes-->
                         {% if session.user|lower == recipe.created_by|lower %}
                         <div>
-                            <a class="link-secondary me-1" href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}" >
+                            <a class="link-secondary me-1" href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}">
                                 Edit
                             </a>
                             <a class="link-secondary" href="{{  url_for('delete_recipe', recipe_id=recipe._id)  }}">
                                 Delete
                             </a>
-
-
                         </div>
                         {% endif %}
                         <p class="text-muted fst-italic small-text"> Category: {{ recipe.category_name }}</p>
@@ -84,6 +75,7 @@
         </div>
         {% endfor %}
     </div>
+    <!--If their are no matching results for user's search, they are flashed the below message-->
     {% else %}
     <div class="row">
         <div class="my-3">
