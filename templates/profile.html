@@ -5,8 +5,8 @@
     <div class="row featurette mt-5">
         <div class="col-md-7">
             <h4>{{ username }}'s profile</h4>
-            <h5 class="mt-2">Your recipes</h5>
-            <div class="accordion accordion-flush">
+            <h5 class="mt-3">Your recipes</h5>
+            <div class="accordion accordion-flush mt-3">
                 {% for recipe in recipes %}
                 {% if session.user|lower == recipe.created_by|lower %}
                 <div class="accordion-item ">
@@ -25,21 +25,25 @@
                         <div class="accordion-body">
                             <div>
                                 <div>
-                                    <a href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}"
-                                        class="link-secondary">
-                                        <i class="fas fa-pen"></i>
-                                    </a>
-                                    <a href="{{  url_for('delete_recipe', recipe_id=recipe._id)  }}" id="delete-button"
-                                        class="link-secondary ml-2">
-                                        <i class="fas fa-times"></i>
-                                    </a>
+                                    <div>
+                                        <a class="link-secondary me-1"
+                                            href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}">
+                                            Edit
+                                        </a>
+                                        <a class="link-secondary"
+                                            href="{{  url_for('delete_recipe', recipe_id=recipe._id)  }}">
+                                            Delete
+                                        </a>
+
+
+                                    </div>
                                 </div>
 
                                 <p class="text-muted fst-italic small-text"> Category: {{ recipe.category_name }}</p>
                                 <p> Ingredients: <span class="fw-light">{{ recipe.ingredients }}</span></p>
                                 <p class="fw-light">{{ recipe.method }}</p>
                                 <p class="text-muted fst-italic small-text"> added by <span class="fw-bold">
-                                        {{ recipe.created_by }} </span> </p>
+                                        you </span> </p>
                             </div>
                         </div>
                     </div>
@@ -49,7 +53,7 @@
             </div>
         </div>
         <div class="col-md-5">
-            <img src="{{  url_for('static', filename ='images/roast-chicken.jpg')  }}" alt="XXXXXX">
+            <img src="{{  url_for('static', filename ='images/smoothie-bowl.jpg')  }}" alt="Smoothie Bowl">
         </div>
     </div>
 </div>
