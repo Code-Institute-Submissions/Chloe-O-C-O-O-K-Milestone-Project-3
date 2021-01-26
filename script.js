@@ -1,2 +1,2 @@
-var confirmmodal = document.getElementById("modal{{ recipe._id }}");
+var myModal = new bootstrap.Modal(document.getElementById('modal{{ recipe._id }}'), options)
 
