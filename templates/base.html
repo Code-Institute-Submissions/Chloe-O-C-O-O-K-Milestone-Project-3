@@ -80,8 +80,8 @@
         </div>
     </header>
 
-    <section>
-        <!--Flash messages-->
+    <div>
+        <!--Flash messages - does not pass HTML validator-->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -89,7 +89,7 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-    </section>
+    </div>
 
     <!--Contents for pages injected here using Flask template inheritance-->
 

@@ -99,6 +99,9 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### HTML
 
+- I validated the HTML using the deployed site's URL
+
+![HTML](static/read-me-images/html-validated.JPG)
 
 ---
 
