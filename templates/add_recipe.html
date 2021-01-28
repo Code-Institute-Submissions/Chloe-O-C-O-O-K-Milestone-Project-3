@@ -18,8 +18,7 @@
 
                 <!--Category - loops through category db collection to display each category-->
 
-                <select class="form-select mt-3" for="recipe_name" id="category_name" name="category_name" required>
-                    <option selected>Recipe category</option>
+                <select class="form-select mt-3" for="recipe_name" id="category_name" name="category_name" aria-placeholder="Recipe Category" required>
                     {% for category in categories %}
                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                     {% endfor %}
