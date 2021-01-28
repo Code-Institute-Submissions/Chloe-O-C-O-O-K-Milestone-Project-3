@@ -60,6 +60,7 @@ Languages used for this site:
 - [Python](https://www.python.org/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+- [Jinja](https://jinja.palletsprojects.com/)
 
 ## Frameworks, Libraries & Programs Used
 
