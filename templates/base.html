@@ -112,8 +112,16 @@
 
         <!--NEED TO CENTRE-->
 
-        <div class="row col-12">
-            <p class="copyright text-secondary"><span id="copyright" class="text-center"></span></p>
+        <div class="row">
+            <div class="col-12">
+                <p class="copyright text-secondary"><span id="copyright" class="text-center"></span></p>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p id="date"></p>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -133,13 +141,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
-    <!--Displays current year on page using JQuery-->
+    <!--JavaScript-->
 
     <script>
-        $("#copyright").text(new Date().getFullYear());
+        var i = new Date();
+        document.getElementById("date").innerHTML = i.getFullYear();
     </script>
-
 </body>
 
 </html>
