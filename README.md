@@ -52,7 +52,7 @@ The purpose of my site is almost like that of a personal recipe book. The user c
 
 ## Wireframes
 
-- 
+- [Link to wireframes](static/read-me-images/ms3-wireframes.pdf)
 
 # Technologies Used
 
