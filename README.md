@@ -29,6 +29,7 @@ The purpose of my site is almost like that of a personal recipe book. The user c
 - I want to be able to view my recipes on my own profile page, separate to other user's recipes
 - I want to easily add, edit and delete my own recipes
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
+- I want to log out when I am finished using the site and clear session data
 
 ## Design
 
@@ -126,6 +127,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ## Testing User Stories from User Experience (UX) Section and Testing
 
+I have completed testing alongside visitor goals, numbered points have been confirmed when testing the site.
+
 ## First Time Visitor Goals
 
 - I want to understand the purpose of the site within a short time of visiting the site by the images and description on the landing page
@@ -143,21 +146,28 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
    1. Only available when a user is logged in, the all recipes page displays all submitted recipes in a Bootstrap accordian
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
   - Users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
-  1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
+    1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
 
 ## Returning Time Visitor Goals & Frequent Time Visitor Goals
 
 - I want to return to the site and log in
   - Users can easily navigate to the log in page and log in to view recipes
-   1. 
+    1. Log in page is easy to find from the index page, user is redirected to profile page upon successful log in
 - I want a place to keep a record of my own recipes
   - Once a user creates an account, they can create recipes - these will be submitted to the database where all users can view them but also a user can view them on their own profile page
+    1. User can submit/edit recipes, these display on recipe page and profile page
 - I want to be able to view my recipes on my own profile page, separate to other user's recipes
   - The user's profile will continue to show recipes only they have submitted
+    1. Once submitted, user's recipes will be commited to the database and remain there and display on all recipes and profile pages
 - I want to easily add, edit and delete my own recipes
   - From the recipes or profile, a user can easily edit or delete a recipe by opening up the relevant accordian item and clicking edit or delete
+    1. Recipes can be deleted using the buttons under the recipes's title in the accordian section
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
   - Again, users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
+    1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
+  - I want to log out when I am finished using the site and clear session data
+    1. When logged in, the navigation bar shows a log out option(only viewable by logged in users), clicking this logs the user out and redirects them to the log in page
+
 
 ## Further Testing
 
@@ -171,7 +181,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 # Bugs/Known Issues
 
 - I was unable to implement a modal for a user to confirm they wanted to delete a recipe before it was deleted, I was not able to get the delete button within the accordian to pull up the modal. As such, this feature was removed
-    - When adding the modal button to the accordian, it produced a large amount of space in each accordian item but when clicking the button it did not retrieve the modal
+    1. When adding the modal button to the accordian, it produced a large amount of space in each accordian item but when clicking the button it did not retrieve the modal
+    2. Though the feature would show further defensive programming, the delete feature still demonstrates the delete function of the database
 - Using Bootstrap's 'select' input function, I was unable to make this field required so a user is able to create or edit a recipe without choosing a category
 
 # Resolved Issues
@@ -216,5 +227,6 @@ GitHub repo was connected to my Heroku app, whenever any changes are pushed to G
 - [Bootstrap Documentation](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 - [Font Awesome](https://fontawesome.com/) for icons used on the site
 - [Google Fonts](https://fonts.google.com/) Roboto font
+- [W3Schools](https://www.w3schools.com/js/js_dates.asp) Year displays in page footer
 
 ---
