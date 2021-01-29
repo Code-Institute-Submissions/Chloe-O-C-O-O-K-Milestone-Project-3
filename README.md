@@ -126,15 +126,15 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ## First Time Visitor Goals
 
 - I want to understand the purpose of the site within a short time of visiting the site by the images and description on the landing page
- - The site is quite minimal and clearly laid out, it is easy for a user to user the purpose of and navigate through the site
+  - The site is quite minimal and clearly laid out, it is easy for a user to user the purpose of and navigate through the site
 - I want to easily create an account to make full use of the site
- - A user can click on the 'login/register' page in the navigation bar to log in or register to the site
+  - A user can click on the 'login/register' page in the navigation bar to log in or register to the site
 - I want to add, edit and delete my own recipes
- - A logged in user, can navigate to their own profile page or the recipes page and easily update or delete their recipes
+  - A logged in user, can navigate to their own profile page or the recipes page and easily update or delete their recipes
 - I want to view recipes submitted by other users
- - Users can navigate to the recipes page to view all submitted recipes including their own
+  - Users can navigate to the recipes page to view all submitted recipes including their own
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
- - Users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
+  - Users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
 
 ## Returning Time Visitor Goals & Frequent Time Visitor Goals
 
