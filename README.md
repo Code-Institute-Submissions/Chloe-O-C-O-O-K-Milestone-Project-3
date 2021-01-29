@@ -143,7 +143,8 @@ I have completed testing alongside visitor goals, numbered points have been conf
    2. If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes where buttons allow user to select edit or delete
 - I want to view recipes submitted by other users
   - Users can navigate to the recipes page to view all submitted recipes including their own
-   1. Only available when a user is logged in, the all recipes page displays all submitted recipes in a Bootstrap accordian
+   1. The all recipes page displays all submitted recipes in a Bootstrap accordian
+   2. Users not logged in can manually access the recipes page, can view recipes but cannot make any changes
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
   - Users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
     1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
@@ -189,15 +190,19 @@ I have completed testing alongside visitor goals, numbered points have been conf
 
 - When creating Procfile, I originally had typed 'web:python run.py' instead of 'web: python run.py'- this meant my Heroku app did not run and threw and Application Error, Cormac @ Code Institute spotted this and the issue resolved
 
+# Lighthouse diagnostic results
+
+![Lighthouse Diagnostic](static/read-me-images/lighthouse.JPG)
+
 ---
 
 # Deployment
 
 ## Heroku
 
-In order to deploy the site, Github, MongoDB and Heroku were nedded.
+In order to deploy the site, Github, MongoDB and Heroku were used.
 
-1. 
+1. I created a repository for the project, using Gitpod I was able to use the green 'Gitpod' button to open the project in a Gitpod workspace and work on the project from here - commits were actioned using the source control tab in Gitpod
 2. 
 3. 
 4. 
@@ -212,7 +217,8 @@ In order to deploy the site, Github, MongoDB and Heroku were nedded.
 
 ## GitHub 
 
-GitHub repo was connected to my Heroku app, whenever any changes are pushed to GitHub they are automatically updated on Heroku so the Heroku app always reflects the most recent version of the site
+ - GitHub repo was connected to my Heroku app, whenever any changes are pushed to GitHub they are automatically updated on Heroku so the Heroku app always reflects the most recent version of the site
+ - To clone the repo, 
 
 ---
 
