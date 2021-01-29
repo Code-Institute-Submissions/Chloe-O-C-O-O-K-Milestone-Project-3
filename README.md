@@ -89,9 +89,17 @@ Languages used for this site:
 - Defensive programming, 'required' attribute used to stop users being able to register a new user with blank spaces etc.
 - When editing a recipe, the input fields are pre-filled with data so a user does not have to re-type the entire recipe
 - Min and Max length used for usernames and passwords and patterns used for further defensive programming
+- Passwords are hashed so are not readable from the database
 - Users can only edit and delete their own recipes, they cannot make any changes to other's recipes
 - A user's profile displays their own recipes on their profile page
 - Using Bootstrap and some media queries, the site is responsive on all device sizes
+
+# Data Structure
+
+- The MongoDB cluster contains 4 collections:
+    - **Recipes** ID, Recipe name, Category name, Ingredients, Method, Created by
+    - **Category** Breakfast, Lunch, Dinner, Snack
+    - **Users** Username, Password
 
 ---
 
