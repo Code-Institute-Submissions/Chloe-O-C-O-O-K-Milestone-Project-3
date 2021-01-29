@@ -25,11 +25,14 @@ The purpose of my site is almost like that of a personal recipe book. The user c
 ## Returning Time Visitor Goals & Frequent Time Visitor Goals
 
 - I want to return to the site and log in
+- I want a place to keep a record of my own recipes
 - I want to be able to view my recipes on my own profile page, separate to other user's recipes
 - I want to easily add, edit and delete my own recipes
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
 
 ## Design
+
+ - Jinja templating used to create a 'base.html' template which helps keep consistency across the site's pages
 
 ## Colour Scheme
 
@@ -82,7 +85,7 @@ Languages used for this site:
 # Features
 
 - A user can Create a recipes, Read recipes, Update and Delete recipes - CRUD functionality
-- Defensive programming, 'required' attribute used to stop users being able to register a new user with blank spaced
+- Defensive programming, 'required' attribute used to stop users being able to register a new user with blank spaces etc.
 - When editing a recipe, the input fields are pre-filled with data so a user does not have to re-type the entire recipe
 - Min and Max length used for usernames and passwords and patterns used for further defensive programming
 - Users can only edit and delete their own recipes, they cannot make any changes to other's recipes
@@ -138,14 +141,24 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ## Returning Time Visitor Goals & Frequent Time Visitor Goals
 
--
--
+- I want to return to the site and log in
+  - Users can easily navigate to the log in page and log in to view recipes
+- I want a place to keep a record of my own recipes
+  - Once a user creates an account, they can create recipes - these will be submitted to the database where all users can view them but also a user can view them on their own profile page
+- I want to be able to view my recipes on my own profile page, separate to other user's recipes
+  - The user's profile will continue to show recipes only they have submitted
+- I want to easily add, edit and delete my own recipes
+  - From the recipes or profile, a user can easily edit or delete a recipe by opening up the relevant accordian item and clicking edit or delete
+- I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
+  - Again, users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
 
 ## Further Testing
 
--
--
--
+- I have used Chrome Developer Tools to understand how the live Heroku app looks on different devices, I've also tested the app on my own Samsung S20+ device
+- I have viewed the app in different browsers such as Google Chrome, Samsung Internet, Microsoft Edge and Mozilla Firefox - I noticed the site loads slightly slower on Firefox compared to other browers
+- I have tested the site by creating accounts, submitting, editing and deleting recipes to ensure there were no error when carrying out these actions
+- I have tested the links on the site to ensure no broken links, social media links in the foot redirect in new tabs so do not lead any from the site
+
 ---
 
 # Bugs/Known Issues
@@ -157,8 +170,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 # Resolved Issues
 
 - When creating Procfile, I originally had typed 'web:python run.py' instead of 'web: python run.py'- this meant my Heroku app did not run and threw and Application Error, Cormac @ Code Institute spotted this and the issue resolved
-- 
--
+
 
 ![TEXT](.xxxx)
 
@@ -179,6 +191,11 @@ GitHub repo was connected to my Heroku app, whenever any changes are pushed to G
 # Credit
 
 - [Pexels](https://www.pexels.com/) Stock images
+    - [Jumbotron image](https://www.pexels.com/@karolina-grabowska) Karolina Grabowska
+    - [Index page image](https://www.pexels.com/@ella-olsson-572949) Ella Olsson
+    - [Add recipe image](https://www.pexels.com/@kseniachernaya) Ksenia Chernaya
+    - [Edit recipe image](https://www.pexels.com/@daria) Daria Shevtsova
+    - [Profile page image](https://www.pexels.com/@jonathanborba) Jonathan Borba
 - [Bootstrap Documentation](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 - [Font Awesome](https://fontawesome.com/) for icons used on the site
 - [Google Fonts](https://fonts.google.com/) Roboto font
