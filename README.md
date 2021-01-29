@@ -198,18 +198,21 @@ I have completed testing alongside visitor goals, numbered points have been conf
 
 # Deployment
 
-## Heroku
-
 In order to deploy the site, Github, MongoDB and Heroku were used.
 
-1. I created a repository for the project, using Gitpod I was able to use the green 'Gitpod' button to open the project in a Gitpod workspace and work on the project from here - commits were actioned using the source control tab in Gitpod
+## Github & Gitpod 
+1. I created a repository for the project on GitHub, using Gitpod I was able to use the green 'Gitpod' button to open the project in a Gitpod workspace and work on the project from here - commits and pushes were actioned using the source control tab in Gitpod
+2. To clone the repository, a user can clone the repo use the 'code' button in the repo. From here the repo can be cloned using HTTPS or GitHub CLI. Alternatively, a user can clone the repo locally by selecting the 'Open with GitHub Desktop' option, this will produce a prompt for GitHub Desktop to open - more information about cloning a repository can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+3. When running locally, all the relevant dependencies will need to be installed using pip, in the IDE's terminal type:
+> pip3 install -r requirements.txt
+
+---
+
+## MongoDB
+
+1. A database will need to be created using MongoDB and an eny.py file created, after created a cluster and collections use the 'connect' option on MongoDB to obtain the MONGO URI, the username, password and cluster_name will need to be replaced with the names applicable to your own database
+> "MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>.qkqsh.mongodb.net/<database_name>?retryWrites=true&w=majority")
 2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
 
 - Create Heroku app
 - Connect Git remote
