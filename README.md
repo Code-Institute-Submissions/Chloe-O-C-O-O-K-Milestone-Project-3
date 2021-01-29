@@ -205,24 +205,24 @@ In order to deploy the site, Github, MongoDB and Heroku were used.
 2. To clone the repository, a user can clone the repo use the 'code' button in the repo. From here the repo can be cloned using HTTPS or GitHub CLI. Alternatively, a user can clone the repo locally by selecting the 'Open with GitHub Desktop' option, this will produce a prompt for GitHub Desktop to open - more information about cloning a repository can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 3. When running locally, all the relevant dependencies will need to be installed using pip, in the IDE's terminal type:
 > pip3 install -r requirements.txt
+4. Create a Procfile, this will allow Heroku to understand the type of app we are running, the following should be input to the Procfile:
+> web: python run.py
 
 ---
 
 ## MongoDB
 
-1. A database will need to be created using MongoDB and an eny.py file created, after created a cluster and collections use the 'connect' option on MongoDB to obtain the MONGO URI, the username, password and cluster_name will need to be replaced with the names applicable to your own database
+1. A database will need to be created using MongoDB and an env.py file created, after created a cluster and collections use the 'connect' option on MongoDB to obtain the MONGO URI, the username, password and cluster_name will need to be replaced with the names applicable to your own database
 > "MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>.qkqsh.mongodb.net/<database_name>?retryWrites=true&w=majority")
-2. 
+2. Add the env.py file to the git ignore file so username and password information cannot be seen by anyone viewing the repo
 
-- Create Heroku app
-- Connect Git remote
-- Add requirements.txt(so Heroku knows what libraries we are using) and Procfile files(so Heroku knows we are running a Python app)
+## Heroku
 
-## GitHub 
-
- - GitHub repo was connected to my Heroku app, whenever any changes are pushed to GitHub they are automatically updated on Heroku so the Heroku app always reflects the most recent version of the site
- - To clone the repo, 
-
+1. Create a Heroku account
+2. Create a new app in Heroku and select your region or closet region, for me this was Ireland though I am based in England
+3. From the deploy tab, choose 'GitHub' and input your repository's name to search for it, click connect once found
+4. Navigate to the settings tab and click 'Reveal config vars', the values from the env.py file will need to be input here i.e. IP, PORT, SECRET_KEY, MONGO_URI and MONGO_DBNAME
+5. From the deploy tab choose 'enable automatic deploys', commits and pushes will be automatically updated on your Heroku app
 ---
 
 # Credit
