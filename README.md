@@ -124,25 +124,32 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ![CSS](static/read-me-images/javascript.JPG)
 
 
-## Testing User Stories from User Experience (UX) Section
+## Testing User Stories from User Experience (UX) Section and Testing
 
 ## First Time Visitor Goals
 
 - I want to understand the purpose of the site within a short time of visiting the site by the images and description on the landing page
   - The site is quite minimal and clearly laid out, it is easy for a user to user the purpose of and navigate through the site
+   1. When navigating through the site, using the navigation bar or collapsable menu(on smaller display), there are no broken links or misdirects
 - I want to easily create an account to make full use of the site
   - A user can click on the 'login/register' page in the navigation bar to log in or register to the site
+   1. A user can log in or register an account using a minimum length of 5 characters for their username and password
 - I want to add, edit and delete my own recipes
   - A logged in user, can navigate to their own profile page or the recipes page and easily update or delete their recipes
+   1. Once a user is logged in or creates an account, they will automatically be redirected to their own profile page
+   2. If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes where buttons allow user to select edit or delete
 - I want to view recipes submitted by other users
   - Users can navigate to the recipes page to view all submitted recipes including their own
+   1. Only available when a user is logged in, the all recipes page displays all submitted recipes in a Bootstrap accordian
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
   - Users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
+  1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
 
 ## Returning Time Visitor Goals & Frequent Time Visitor Goals
 
 - I want to return to the site and log in
   - Users can easily navigate to the log in page and log in to view recipes
+   1. 
 - I want a place to keep a record of my own recipes
   - Once a user creates an account, they can create recipes - these will be submitted to the database where all users can view them but also a user can view them on their own profile page
 - I want to be able to view my recipes on my own profile page, separate to other user's recipes
@@ -164,19 +171,29 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 # Bugs/Known Issues
 
 - I was unable to implement a modal for a user to confirm they wanted to delete a recipe before it was deleted, I was not able to get the delete button within the accordian to pull up the modal. As such, this feature was removed
+    - When adding the modal button to the accordian, it produced a large amount of space in each accordian item but when clicking the button it did not retrieve the modal
 - Using Bootstrap's 'select' input function, I was unable to make this field required so a user is able to create or edit a recipe without choosing a category
-- 
 
 # Resolved Issues
 
 - When creating Procfile, I originally had typed 'web:python run.py' instead of 'web: python run.py'- this meant my Heroku app did not run and threw and Application Error, Cormac @ Code Institute spotted this and the issue resolved
 
-
-![TEXT](.xxxx)
+---
 
 # Deployment
 
 ## Heroku
+
+In order to deploy the site, Github, MongoDB and Heroku were nedded.
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
 
 - Create Heroku app
 - Connect Git remote
