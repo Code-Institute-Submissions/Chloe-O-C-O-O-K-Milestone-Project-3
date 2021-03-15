@@ -1,4 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container">
+    <div class="row featurette mt-5">
+        <div class="col-md-7">
+            {% for recipe in recipes %}
+            {% if session.user|lower == recipe.created_by|lower %}
+
+            <!--Recipe-->
+
+            <h4>{{ recipe.recipe_name}}</h4>
+
+            <div>
+                <h4>Category</h4>
+                <p class="text-muted fst-italic small-text">{{ recipe.category_name }}</p>
+            </div>
+            <div>
+                <p>{{ recipe.ingredients }}</p>
+            </div>
+            <div>
+                <h4>Method</h4>
+                <p>{{ recipe.method }}</p>
+            </div>
+            <div>
+                <p>{{ recipe.created_by }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <img src="{{  url_for('static', filename ='images/avocado-toast.jpg')  }}" alt="Avocado toast">
+        </div>
+    </div>
+</div>
 {% endblock %}
