@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    {% for recipe in recipes %}
+    <div class="row featurette mt-5">
+        <div class="col-md-7">
+            <h4>{{ recipe.recipe_name}} by <span class="">{{ recipe.created_by }}</span></h4>
+            <div>
+                <h5>Category</h5>
+                <p>{{ recipe.category_name }}</p>
+                <h5>Ingredients</h5>
+                <p>{{ recipe.ingredients }}</p>
+                <h5>Method</h5>
+                <p>{{ recipe.method }}</p>
+            </div>
+            <div>{% if session.user|lower == recipe.created_by|lower %}
+                <div>
+                    <a class="link-secondary me-1" href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}">
+                        Edit
+                    </a>
+                    <a class="link-secondary" href="{{  url_for('delete_recipe', recipe_id=recipe._id)  }}">
+                        Delete
+                    </a>
+                    {% endif %}</div>
+            </div>
+            {% endfor %}
+            <div class="col-md-5">
+                <img src="{{  url_for('static', filename ='images/fried-eggs.jpg')  }}" alt="Fried eggs">
+            </div>
+        </div>
+    </div>
+    {% endblock %}

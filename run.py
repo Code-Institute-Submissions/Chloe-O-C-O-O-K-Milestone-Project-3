@@ -145,6 +145,12 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+@app.route("/view_recipe/<recipe_id>", methods=["GET"])
+def view_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("view_recipe.html", recipe=recipe)
+
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 # Allows a user to edit or delete a recipe added by themselves,
 # they are only able to view recipes added by other users#
