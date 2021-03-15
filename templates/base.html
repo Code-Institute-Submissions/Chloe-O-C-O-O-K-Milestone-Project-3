@@ -50,7 +50,7 @@
                         -->
                         {% if session.user %}
                         <li class="nav-item nav-styling">
-                            <a href="{{  url_for('recipes_copy')  }}">All recipes</a>
+                            <a href="{{  url_for('recipes')  }}">All recipes</a>
                         </li>
                         <li class="nav-item nav-styling">
                             <a href="{{  url_for('profile', username=session['user'])  }}">Profile</a>
