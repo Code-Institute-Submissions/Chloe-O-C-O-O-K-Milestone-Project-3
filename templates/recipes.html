@@ -33,48 +33,32 @@
         </div>
     </div>
     {% if recipes|length > 0 %}
-    <div class="accordion accordion-flush">
-        {% for recipe in recipes %}
-        <div class="accordion-item ">
-            <div class="row">
-
-                <h2 class="accordion-header" id="flush-headingOne">
-
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse-{{ recipe._id }}" aria-expanded="false"
-                        aria-controls="collapse-{{ recipe._id }}">
-                         <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name}}</a>
-                    </button>
-                </h2>
-
-            </div>
-
-            <div id="collapse-{{ recipe._id }}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                    <div>
-                        <!--User logged in can only edit and delete their own recipes-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 pt-3">
+                {% for recipe in recipes %}
+                <div class="card">
+                    <img src="{{  url_for('static', filename ='images/avocado-toast.jpg')  }}" class="card-img-top"
+                        alt="{{ recipe.recipe_name}}">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name}}</a>
+                        </h5>
+                        <p>By {{ recipe.created_by }}</p>
+                        <p class="card-text">TEST TEST TEST TEST</p>
+                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
+                            class="btn btn-outline-dark btn-sm">View</a>
                         {% if session.user|lower == recipe.created_by|lower %}
-                        <div>
-                            <a class="link-secondary me-1" href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}">
-                                Edit
-                            </a>
-                            <a class="link-secondary" href="{{  url_for('delete_recipe', recipe_id=recipe._id)  }}">
-                                Delete
-                            </a>
-                            {% endif %}
-                            <p class="text-muted fst-italic small-text"> Category: {{ recipe.category_name }}</p>
-                            <p> Ingredients: <span class="fw-light">{{ recipe.ingredients }}</span></p>
-                            <p class="fw-light">{{ recipe.method }}</p>
-                            <p class="text-muted fst-italic small-text"> added by <span class="fw-bold">
-                                    {{ recipe.created_by }} </span> </p>
-                        </div>
+                        <a href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}"
+                            class="btn btn-outline-dark btn-sm">Edit</a>
+                        {% endif %}
                     </div>
                 </div>
+                {% endfor %}
             </div>
-</div>
-            {% endfor %}
         </div>
+
+
         <!--If their are no matching results for user's search, they are flashed the below message-->
         {% else %}
         <div class="row">
