@@ -135,7 +135,8 @@ def add_recipe():
             "category_name": request.form.get("category_name"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "recipe_image": request.form.get("recipe_url")
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe added successfully!")
@@ -146,6 +147,8 @@ def add_recipe():
 
 
 @app.route("/view_recipe/<recipe_id>", methods=["GET"])
+# User can view each recipe individually, recipe creator
+# can also edit/delete from this page #
 def view_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("view_recipe.html", recipe=recipe)
@@ -161,7 +164,8 @@ def edit_recipe(recipe_id):
             "category_name": request.form.get("category_name"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "recipe_image": request.form.get("recipe_url")
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, recipe_submit)
         flash("Recipe has been updated!")

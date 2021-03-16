@@ -57,17 +57,18 @@
                 {% endfor %}
             </div>
         </div>
-
-
-        <!--If their are no matching results for user's search, they are flashed the below message-->
-        {% else %}
-        <div class="row">
-            <div class="my-3">
-                <h4>No recipes found <i class="fas fa-exclamation"></i></h4>
-            </div>
-        </div>
-        {% endif %}
     </div>
 
 
-    {% endblock %}
+    <!--If their are no matching results for user's search, they are flashed the below message-->
+    {% else %}
+    <div class="row">
+        <div class="my-3">
+            <h4>No recipes found <i class="fas fa-exclamation"></i></h4>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}
