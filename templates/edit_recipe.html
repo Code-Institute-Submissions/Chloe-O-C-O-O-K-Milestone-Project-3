@@ -18,7 +18,8 @@
 
                 <!--Category - loops through category db collection to display each category-->
 
-                <select class="form-select mt-3" for="recipe_name" id="category_name" name="category_name" aria-placeholder="Recipe Category" required>
+                <select class="form-select mt-3" for="recipe_name" id="category_name" name="category_name"
+                    aria-placeholder="Recipe Category" required>
                     {% for category in categories %}
                     {% if category.category_name == recipe.category_name %}
                     <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
@@ -39,6 +40,7 @@
                 <label for="method" class="sr-only">Method</label>
                 <input type="text" name="method" id="method" class="form-control mt-3" value="{{- recipe.method -}}"
                     required autofocus />
+
 
                 <!--Submit button-->
 

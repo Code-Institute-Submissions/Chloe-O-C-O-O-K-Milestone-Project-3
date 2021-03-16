@@ -22,22 +22,13 @@
                         Delete
                     </a>
                     {% endif %}</div>
+                <div class="mt-3">
+                    <a href="{{  url_for('recipes')  }}" class="btn btn-outline-dark btn-sm">Back to all recipes</a>
+                </div>
             </div>
         </div>
-        {% if recipe_image %}
-
         <div class="col-md-5">
-            <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name}}">
-
-        </div> {% else %}
-        <div class="col-md-5">
-            <img src="{{  url_for('static', filename ='images/no-image-image.jpg')  }}"
-                alt="Family enjoying food together">
-        </div>
-        {% endif %}
-
-        <div class="mt-3">
-            <a href="{{  url_for('recipes')  }}" class="btn btn-outline-dark btn-sm">Back to all recipes</a>
+            <img src="{{  url_for('static', filename ='images/fried-eggs.jpg')  }}" alt="Fried Eggs">
         </div>
     </div>
 </div>
