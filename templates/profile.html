@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="container">
     <div class="row featurette mt-5">
+
         <div class="col-md-7">
 
             <!--Populates user's name into the h4 heading-->
@@ -25,14 +25,14 @@
                 {% endif %}
                 {% endfor %}
             </ul>
+
         </div>
 
 
-    </div>
-    <div class="col-md-5">
-        <img src="{{  url_for('static', filename ='images/smoothie-bowl.jpg')  }}" alt="Smoothie Bowl">
+            <div class="col-md-5">
+                <img src="{{  url_for('static', filename ='images/smoothie-bowl.jpg')  }}" alt="Smoothie Bowl">
+            </div>
+
     </div>
 </div>
-
-
 {% endblock %}
