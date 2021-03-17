@@ -7,8 +7,6 @@
 
             <form class="form-width" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
                 <h4 class="mb-3">Edit a recipe</h4>
-                <p class="text-muted"><i class="fas fa-exclamation"></i> Seperate ingredients and method steps using a
-                    comma</p>
 
                 <!--Recipe name-->
 
@@ -32,8 +30,8 @@
                 <!--Ingredients-->
 
                 <label for="ingredients" class="sr-only">Ingredients</label>
-                <input type="text" name="ingredients" id="ingredients" class="form-control mt-3"
-                    value="{{- recipe.ingredients -}}" required autofocus />
+                <textarea name="ingredients" id="ingredients" class="form-control mt-3" rows="1"
+                    placeholder="Ingredients" value="{{ recipe.ingredients }}" required autofocus> </textarea>
 
                 <!--Method-->
 
@@ -41,6 +39,9 @@
                 <input type="text" name="method" id="method" class="form-control mt-3" value="{{- recipe.method -}}"
                     required autofocus />
 
+                <p class="text-muted mt-3"><i class="fas fa-exclamation"></i> Input each ingredient and method step on a
+                    new
+                    line</p>
 
                 <!--Submit button-->
 

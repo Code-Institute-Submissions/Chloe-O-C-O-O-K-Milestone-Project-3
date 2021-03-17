@@ -10,7 +10,9 @@
                 <h6>Category</h6>
                 <p>{{ recipe.category_name }}</p>
                 <h6>Ingredients</h6>
-                <p>{{ recipe.ingredients }}</p>
+                {% for ingredient in recipe.ingredients.splitlines() %}
+                <p><i class="fas fa-carrot"></i> {{ ingredient }}</p>
+                {% endfor %}
                 <h6>Method</h6>
                 <p>{{ recipe.method }}</p>
             </div>
