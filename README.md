@@ -90,7 +90,7 @@ Languages used for this site:
 - When editing a recipe, the input fields are pre-filled with data so a user does not have to re-type the entire recipe
 - Min and Max length used for usernames and passwords and patterns used for further defensive programming
 - Passwords are hashed so are not readable from the database
-- Users can only edit and delete their own recipes, they cannot make any changes to other's recipes
+- Users can only edit and delete their own recipes, they cannot make any changes to other's recipes - a modal is prompted when deleting a recipe to check the user is sure they want to delete - this defensive programming prevents recipes being deleted accidentally
 - A user's profile displays their own recipes on their profile page
 - Using Bootstrap and some media queries, the site is responsive on all device sizes
 
@@ -141,17 +141,17 @@ I have completed testing alongside visitor goals, numbered points have been conf
 
 - I want to understand the purpose of the site within a short time of visiting the site by the images and description on the landing page
   - The site is quite minimal and clearly laid out, it is easy for a user to user the purpose of and navigate through the site
-   1. When navigating through the site, using the navigation bar or collapsable menu(on smaller display), there are no broken links or misdirects
+   1. When navigating through the site, using the navigation bar or collapsable menu(on smaller displays), there are no broken links or misdirects
 - I want to easily create an account to make full use of the site
-  - A user can click on the 'login/register' page in the navigation bar to log in or register to the site
+  - A user can click on the 'login or register' page in the navigation bar to log in or register to the site
    1. A user can log in or register an account using a minimum length of 5 characters for their username and password
 - I want to add, edit and delete my own recipes
   - A logged in user, can navigate to their own profile page or the recipes page and easily update or delete their recipes
    1. Once a user is logged in or creates an account, they will automatically be redirected to their own profile page
-   2. If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes where buttons allow user to select edit or delete
+   2. If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes where buttons allow user to view, edit or delete
 - I want to view recipes submitted by other users
   - Users can navigate to the recipes page to view all submitted recipes including their own
-   1. The all recipes page displays all submitted recipes in a Bootstrap accordian
+   1. The all recipes page displays all submitted recipes in Bootstrap cards
    2. Users not logged in can manually access the recipes page, can view recipes but cannot make any changes
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
   - Users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
@@ -169,8 +169,8 @@ I have completed testing alongside visitor goals, numbered points have been conf
   - The user's profile will continue to show recipes only they have submitted
     1. Once submitted, user's recipes will be commited to the database and remain there and display on all recipes and profile pages
 - I want to easily add, edit and delete my own recipes
-  - From the recipes or profile, a user can easily edit or delete a recipe by opening up the relevant accordian item and clicking edit or delete
-    1. Recipes can be deleted using the buttons under the recipes's title in the accordian section
+  - From the recipes or profile, a user can easily edit or delete a recipe by opening the relevant card item and clicking view or edit
+    1. Recipes can be deleted by clicking edit button on the recipes or from the view recipe page
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
   - Again, users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
     1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
@@ -189,14 +189,19 @@ I have completed testing alongside visitor goals, numbered points have been conf
 
 # Bugs/Known Issues
 
+The bugs below refer to the first site build, prior to my first re-submission:
+
 - I was unable to implement a modal for a user to confirm they wanted to delete a recipe before it was deleted, I was not able to get the delete button within the accordian to pull up the modal. As such, this feature was removed
     1. When adding the modal button to the accordian, it produced a large amount of space in each accordian item but when clicking the button it did not retrieve the modal
     2. Though the feature would show further defensive programming, the delete feature still demonstrates the delete function of the database
 - Using Bootstrap's 'select' input function, I was unable to make this field required so a user is able to create or edit a recipe without choosing a category
 
+
+
 # Resolved Issues
 
 - When creating Procfile, I originally had typed 'web:python run.py' instead of 'web: python run.py'- this meant my Heroku app did not run and threw and Application Error, Cormac @ Code Institute spotted this and the issue resolved
+
 
 # Lighthouse diagnostic results
 

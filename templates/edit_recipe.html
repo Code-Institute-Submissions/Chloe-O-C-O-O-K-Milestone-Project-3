@@ -31,13 +31,13 @@
 
                 <label for="ingredients" class="sr-only">Ingredients</label>
                 <textarea name="ingredients" id="ingredients" class="form-control mt-3" rows="1"
-                    placeholder="Ingredients" value="{{ recipe.ingredients }}" required autofocus> </textarea>
+                    value="{{- recipe.ingredients -}}" required autofocus>{{- recipe.ingredients -}}</textarea>
 
                 <!--Method-->
 
                 <label for="method" class="sr-only">Method</label>
-                <input type="text" name="method" id="method" class="form-control mt-3" value="{{- recipe.method -}}"
-                    required autofocus />
+                <textarea name="method" id="method" class="form-control mt-3" rows="1" value="{{- recipe.method -}}"
+                    required autofocus>{{- recipe.method -}}</textarea>
 
                 <p class="text-muted mt-3"><i class="fas fa-exclamation"></i> Input each ingredient and method step on a
                     new

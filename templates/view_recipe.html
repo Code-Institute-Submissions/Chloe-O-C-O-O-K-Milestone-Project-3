@@ -14,7 +14,9 @@
                 <p><i class="fas fa-carrot"></i> {{ ingredient }}</p>
                 {% endfor %}
                 <h6>Method</h6>
-                <p>{{ recipe.method }}</p>
+                {% for method in recipe.method.splitlines() %}
+                <p><i class="fas fa-lemon"></i> {{ method }}</p>
+                {% endfor %}
             </div>
 
             <div>{% if session.user|lower == recipe.created_by|lower %}
