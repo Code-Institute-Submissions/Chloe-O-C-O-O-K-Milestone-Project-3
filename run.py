@@ -191,6 +191,14 @@ def delete_profile(username):
     return redirect(url_for("register"))
 
 
+@app.route("/view_users")
+# Returns recipes as list from DB#
+def view_users():
+    users = list(
+        mongo.db.users.find())
+    return render_template("view_users.html", users=users)
+
+
 if __name__ == "__main__":
     # Changed to false before submitting #
     app.run(
