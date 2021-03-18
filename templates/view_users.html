@@ -6,9 +6,10 @@
     <div class="row featurette mt-5">
         <div class="col-md-7">
 
-            <h4>Hello {{ username }}!</h4>
+            <h4>Welcome back Admin!</h4>
             <h5 class="mt-3">All users</h5>
-            <p>Below you will find all registered users, as admin you can delete users from the database. There are currently <span class="fw-bold">{{users|length}}</span> users, not including the admin,
+            <p>Below you will find all registered users, as admin you can delete users from the database. There are
+                currently <span class="fw-bold">{{users|length}}</span> users, not including the admin,
                 registered in the user database.</p>
 
             {% for user in users %}
@@ -17,9 +18,36 @@
                     <h6>{{ user.username }}</h6>
                 </div>
                 <div class="col-4">
-                    <a data-toggle="modal" data-target="#deleteUser" class="btn btn-outline-dark btn-sm ml-4">Delete <i class="fas fa-times"></i></a>
+                    <a data-toggle="modal" data-target="#deleteUser" class="btn btn-outline-dark btn-sm ml-4">Delete <i
+                            class="fas fa-times"></i></a>
                 </div>
             </div>
+
+            <!--Modal template used from Bootstrap docs-->
+
+            <div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="deleteUser" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Delete {{ user.username }} from the database?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            This action cannot be undone
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark btn-sm" data-dismiss="modal">No, don't
+                                delete</button>
+                            <a class="btn btn-outline-dark btn-sm" href="#">
+                                Delete this user
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {% endfor %}
 
         </div>
@@ -28,31 +56,6 @@
             <img src="{{  url_for('static', filename ='images/avocado-toast.jpg')  }}" alt="Fried Eggs">
         </div>
 
-    </div>
-</div>
-
-
-<!--Modal template used from Bootstrap docs-->
-
-<div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="deleteUser" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h6 class="modal-title">Delete XXXXX from the database?</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                This action cannot be undone
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark btn-sm" data-dismiss="modal">No, don't delete</button>
-                <a class="btn btn-outline-dark btn-sm" href="#}">
-                    Delete this user
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 

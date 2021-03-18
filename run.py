@@ -203,6 +203,14 @@ def view_users():
     return render_template("view_users.html", users=users)
 
 
+@app.route("/delete_user/<username>")
+# User can delete their own recipes, this is removed from the DB#
+def delete_user(username):
+    mongo.db.users.remove({"username": username.lower()})
+    flash("User deleted")
+    return redirect(url_for("view_users"))
+
+
 if __name__ == "__main__":
     # Changed to false before submitting #
     app.run(
