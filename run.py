@@ -196,6 +196,10 @@ def delete_profile(username):
 def view_users():
     users = list(
         mongo.db.users.find())
+    for i, user in enumerate(users):
+        if user["username"] == "admin":
+            users.pop(i)
+            break
     return render_template("view_users.html", users=users)
 
 

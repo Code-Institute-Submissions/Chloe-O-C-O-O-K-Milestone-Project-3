@@ -8,8 +8,8 @@
 
             <h4>Hello {{ username }}!</h4>
             <h5 class="mt-3">All users</h5>
-            <p>Below you will find all registered users, as admin you can delete users from the database. Currently
-                there are <span class="fw-bold">{{users|length}}</span> users registered in the user database.</p>
+            <p>Below you will find all registered users, as admin you can delete users from the database. There are currently <span class="fw-bold">{{users|length}}</span> users, not including the admin,
+                registered in the user database.</p>
 
             {% for user in users %}
             <div class="row mt-1">
