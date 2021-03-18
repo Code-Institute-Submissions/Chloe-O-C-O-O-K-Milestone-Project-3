@@ -37,22 +37,30 @@
         <div class="row mw-70">
 
             {% for recipe in recipes %}
-            <div class="card mb-4 shadow">
+            <div class="card mb-4 shadow font-italic">
                 <div class="row no-gutters">
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title px-3">
-                                <a class="text-dark"
+                            <h5 class="text-secondary card-title px-3">
+                                <a class="text-dark text-decoration-none"
                                     href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name}}</a>
                             </h5>
-                            <p class="px-3" >By {{ recipe.created_by }}</p>
-                            <p class="card-text px-3">TEST TEST TEST TEST</p>
-                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
-                                class="btn btn-outline-dark btn-sm px-3 ">View</a>
-                            {% if session.user|lower == recipe.created_by|lower %}
-                            <a href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}"
-                                class="btn btn-outline-dark btn-sm px-3 ">Edit</a>
-                            {% endif %}
+                            <p class="small-text text-muted px-3">By {{ recipe.created_by }}</p>
+                            <p class="card-text text-muted px-3">A {{ recipe.category_name }} recipe for
+                                {{ recipe.recipe_name}}</p>
+
+                            <div class="px-3">
+
+                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
+                                    class="btn btn-outline-dark btn-sm  ">View</a>
+
+                                {% if session.user|lower == recipe.created_by|lower %}
+
+                                <a href="{{  url_for('edit_recipe', recipe_id=recipe._id)  }}"
+                                    class="btn btn-outline-dark btn-sm">Edit</a>
+
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
