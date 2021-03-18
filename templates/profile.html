@@ -14,17 +14,19 @@
 
             <!--Profile shows only recipes submitted by the user, user can view all recipes(including their own on the 'all recipes' page)-->
 
-
-            <ul class="list-unstyled">
                 {% for recipe in recipes %}
                 {% if session.user|lower == recipe.created_by|lower %}
-                <li> {{ recipe.recipe_name}} <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
+            <div class="row mt-1">
+                <div class="col-8">
+                    <h6>{{ recipe.recipe_name}}</h6>
+                </div>
+                <div class="col-4">
+                    <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
                         class="btn btn-outline-dark btn-sm ml-4">View</a>
+                </div>
+            </div>
             {% endif %}
             {% endfor %}
-                </li>
-
-            </ul>
 
             <!--User can delete their own profile and will be redirected back to the home page-->
 
