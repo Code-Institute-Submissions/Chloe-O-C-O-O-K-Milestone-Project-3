@@ -130,7 +130,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### JavaScript
 
-![CSS](static/read-me-images/javascript.JPG)
+![JavaScript](static/read-me-images/javascript.JPG)
 
 
 ## Testing User Stories from User Experience (UX) Section and Testing
@@ -201,6 +201,12 @@ The bugs below refer to the first site build, prior to my first re-submission:
 # Resolved Issues
 
 - When creating Procfile, I originally had typed 'web:python run.py' instead of 'web: python run.py'- this meant my Heroku app did not run and threw and Application Error, Cormac @ Code Institute spotted this and the issue resolved
+
+- I added a function that allows users to delete their profiles, initally the user would be logged out and flashed a message telling them their profile had been deleted. However, through testing I discovered that you were still able to login using the 'deleted' user's credentials. I discovered this was due to a typo in the function, though it didn't throw and error - this now works correctly when changed to " mongo.db.users.remove({"username": username.lower()}) "
+
+![Bug in run.py file](static/read-me-images/delete-profile-typo.JPG)
+
+
 
 
 # Lighthouse diagnostic results

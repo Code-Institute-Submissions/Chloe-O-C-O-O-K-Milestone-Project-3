@@ -182,6 +182,15 @@ def delete_recipe(recipe_id):
     return redirect(url_for("recipes"))
 
 
+@app.route("/delete_profile/<username>")
+# User can delete their own profile, user's recipes are kept #
+def delete_profile(username):
+    mongo.db.users.remove({"username": username.lower()})
+    session.pop("user")
+    flash("Your profile has been deleted")
+    return redirect(url_for("register"))
+
+
 if __name__ == "__main__":
     # Changed to false before submitting #
     app.run(
