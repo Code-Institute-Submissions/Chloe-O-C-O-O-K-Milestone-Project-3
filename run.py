@@ -200,7 +200,8 @@ def delete_profile(username):
 
 
 @app.route("/view_users")
-# Returns recipes as list from DB#
+# Returns user list, admin is not counted as part of this and 'popped' from list#
+# If user is not 'admin' they will be redirected back to index #
 def view_users():
     users = list(
         mongo.db.users.find())
@@ -209,8 +210,8 @@ def view_users():
             users.pop(i)
             break
 
-        if session["user"] == "admin":
-            return render_template("view_users.html", users=users)
+    if session["user"] == "admin":
+        return render_template("view_users.html", users=users)
 
     else:
         flash("You are not authorized to view this content")
