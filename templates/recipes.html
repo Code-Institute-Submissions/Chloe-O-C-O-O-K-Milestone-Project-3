@@ -60,17 +60,45 @@
                                     class="btn btn-outline-dark btn-sm">Edit</a>
 
                                 {% endif %}
+                                {% if session.user == 'admin' %}
+                                <a data-toggle="modal" data-target="#adminDeleteRecipe{{ recipe._id }}"
+                                    class="btn btn-outline-dark btn-sm">Delete</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            {% endfor %}
-
         </div>
     </div>
 
+    <!--Modal template used from Bootstrap docs-->
+
+    <div class="modal fade" id="adminDeleteRecipe{{ recipe._id }}" tabindex="-1" aria-labelledby="adminDeleteRecipe{{ recipe._id }}"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">Delete {{ recipe.recipe_name}} by {{ recipe.created_by }} ?</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    This action cannot be undone
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark btn-sm" data-dismiss="modal">No, don't
+                        delete</button>
+                    <a class="btn btn-outline-dark btn-sm" href="{{  url_for('admin_delete_recipe', recipe_id=recipe._id)  }}">
+                        Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
 
     <!--If their are no matching results for user's search, they are flashed the below message-->
     {% else %}

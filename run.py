@@ -182,6 +182,14 @@ def delete_recipe(recipe_id):
     return redirect(url_for("recipes"))
 
 
+@app.route("/admin_delete_recipe/<recipe_id>")
+# Admin can delete any user's recipe, this is removed from the DB#
+def admin_delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe deleted")
+    return redirect(url_for("recipes"))
+
+
 @app.route("/delete_profile/<username>")
 # User can delete their own profile, user's recipes are kept #
 def delete_profile(username):
