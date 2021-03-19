@@ -200,7 +200,13 @@ def view_users():
         if user["username"] == "admin":
             users.pop(i)
             break
-    return render_template("view_users.html", users=users)
+
+        if session["user"] == "admin":
+            return render_template("view_users.html", users=users)
+
+    else:
+        flash("You are not authorized to view this content")
+    return redirect(url_for("index"))
 
 
 @app.route("/delete_user/<user_id>")
