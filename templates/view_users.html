@@ -18,18 +18,18 @@
                     <h6>{{ user.username }}</h6>
                 </div>
                 <div class="col-4">
-                    <a data-toggle="modal" data-target="#deleteUser" class="btn btn-outline-dark btn-sm ml-4">Delete <i
+                    <a data-toggle="modal" data-target="#deleteUser{{ user._id }}" class="btn btn-outline-dark btn-sm ml-4">Delete <i
                             class="fas fa-times"></i></a>
                 </div>
             </div>
 <div class="mb-2"><!--Margin under last iteration of user--></div>
             <!--Modal template used from Bootstrap docs-->
 
-            <div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="deleteUser" aria-hidden="true">
+            <div class="modal fade" id="deleteUser{{ user._id }}" tabindex="-1" aria-labelledby="deleteUser{{ user._id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title">Delete this user from the database?</h6>
+                            <h6 class="modal-title">Delete {{ user.username }} from the database?</h6>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
