@@ -1,4 +1,4 @@
-# Flask classes imported #
+# FLASK CLASSES IMPORTED #
 import os
 from flask import (
     Flask, render_template, request,
@@ -10,13 +10,13 @@ if os.path.exists("env.py"):
     import env
 
 
-# app variable defined#
+# APP VAR DEFINED #
 
 
 app = Flask(__name__)
 
 
-# Config vars defined and added to Heroku#
+# CONFIG VARS #
 
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -26,10 +26,16 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# APP OPENS ON INDEX PAGE #
+
+
 @app.route("/")
 # When app is started, the homepage is rendered#
 def index():
     return render_template("index.html")
+
+
+# RECIPES  #
 
 
 @app.route("/recipes")
@@ -46,6 +52,9 @@ def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
+
+
+# USER CAN REGISTER #
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -71,6 +80,9 @@ def register():
         flash("Registeration complete!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
+
+
+# EXISTING USERS LOGIN #
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -101,6 +113,9 @@ def login():
     return render_template("login.html")
 
 
+# USER CAN VIEW OWN RECIPES ON PROFILE #
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # User's username and own recipes are taken from DB and display on page#
@@ -115,6 +130,9 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# LOG OUT #
+
+
 @app.route("/logout")
 def logout():
     # Removes user from session cookies and logs the user out #
@@ -122,6 +140,9 @@ def logout():
     flash("You've been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# ADD RECIPE #
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -143,6 +164,9 @@ def add_recipe():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
+
+
+# VIEW RECIPE #
 
 
 @app.route("/view_recipe/<recipe_id>", methods=["GET"])
@@ -182,14 +206,6 @@ def delete_recipe(recipe_id):
     return redirect(url_for("recipes"))
 
 
-@app.route("/admin_delete_recipe/<recipe_id>")
-# Admin can delete any user's recipe, this is removed from the DB#
-def admin_delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe deleted")
-    return redirect(url_for("recipes"))
-
-
 @app.route("/delete_profile/<username>")
 # User can delete their own profile, user's recipes are kept #
 def delete_profile(username):
@@ -199,8 +215,11 @@ def delete_profile(username):
     return redirect(url_for("register"))
 
 
+# ADMIN ONLY FUNCTIONS #
+
+
 @app.route("/view_users")
-# Returns user list, admin is not counted as part of this and 'popped' from list#
+# Returns user list, admin is not counted as part of this and 'popped' from list #
 # If user is not 'admin' they will be redirected back to index #
 def view_users():
     users = list(
@@ -214,8 +233,15 @@ def view_users():
         return render_template("view_users.html", users=users)
 
     else:
-        flash("You are not authorized to view this content")
-    return redirect(url_for("index"))
+        return redirect(url_for("index"))
+
+
+@app.route("/admin_delete_recipe/<recipe_id>")
+# Admin can delete any user's recipe, this is removed from the DB#
+def admin_delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe deleted")
+    return redirect(url_for("recipes"))
 
 
 @app.route("/delete_user/<user_id>")
@@ -224,6 +250,9 @@ def delete_user(user_id):
     mongo.db.users.remove({"_id": ObjectId(user_id)})
     flash("User deleted")
     return redirect(url_for("view_users"))
+
+
+# DEBUG #
 
 
 if __name__ == "__main__":
