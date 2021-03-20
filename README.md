@@ -187,9 +187,9 @@ I have completed testing alongside visitor goals, numbered points have been conf
 ## Admin
 
 - I want to delete any user from the database
- - From the view_users page, that is only accessible for admin, the admin can delete any user from the database
+  - From the view_users page, that is only accessible for admin, the admin can delete any user from the database
 - I want to delete any user's recipe from the database
- - From the all_recipe page, the admin can delete any user's recipe from the database
+  - From the all_recipe page, the admin can delete any user's recipe from the database
 
 ## Further Testing
 
