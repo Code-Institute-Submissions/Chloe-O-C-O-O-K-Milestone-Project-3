@@ -31,6 +31,11 @@ The purpose of my site is almost like that of a personal recipe book. The user c
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
 - I want to log out when I am finished using the site and clear session data
 
+## Admin
+
+- I want to delete any user from the database
+- I want to delete any user's recipe from the database
+
 ## Design
 
  - Jinja templating used to create a 'base.html' template which helps keep consistency across the site's pages
@@ -86,11 +91,13 @@ Languages used for this site:
 # Features
 
 - A user can Create a recipes, Read recipes, Update and Delete recipes - CRUD functionality
-- Defensive programming, 'required' attribute used to stop users being able to register a new user with blank spaces etc.
+- Defensive programming, 'required' attribute used to stop users being able to register a new recipe with blank spaces etc.
+- Recipe Ingredients and Method are presented as a list when viewed for easy reading
 - When editing a recipe, the input fields are pre-filled with data so a user does not have to re-type the entire recipe
 - Min and Max length used for usernames and passwords and patterns used for further defensive programming
 - Passwords are hashed so are not readable from the database
 - Users can only edit and delete their own recipes, they cannot make any changes to other's recipes - a modal is prompted when deleting a recipe to check the user is sure they want to delete - this defensive programming prevents recipes being deleted accidentally
+- The only exception to the above is the admin user who can delete users and recipes
 - A user's profile displays their own recipes on their profile page
 - Using Bootstrap and some media queries, the site is responsive on all device sizes
 
@@ -148,7 +155,7 @@ I have completed testing alongside visitor goals, numbered points have been conf
 - I want to add, edit and delete my own recipes
   - A logged in user, can navigate to their own profile page or the recipes page and easily update or delete their recipes
    1. Once a user is logged in or creates an account, they will automatically be redirected to their own profile page
-   2. If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes where buttons allow user to view, edit or delete
+   2. If a user has submitted recipes, these will appear on the user's profile page as well as the all recipes page where buttons allow user to view, edit or delete
 - I want to view recipes submitted by other users
   - Users can navigate to the recipes page to view all submitted recipes including their own
    1. The all recipes page displays all submitted recipes in Bootstrap cards
@@ -167,21 +174,28 @@ I have completed testing alongside visitor goals, numbered points have been conf
     1. User can submit/edit recipes, these display on recipe page and profile page
 - I want to be able to view my recipes on my own profile page, separate to other user's recipes
   - The user's profile will continue to show recipes only they have submitted
-    1. Once submitted, user's recipes will be commited to the database and remain there and display on all recipes and profile pages
+    1. Once submitted, user's recipes will be commited to the database and remain there and display on all recipes and their own profile page
 - I want to easily add, edit and delete my own recipes
   - From the recipes or profile, a user can easily edit or delete a recipe by opening the relevant card item and clicking view or edit
-    1. Recipes can be deleted by clicking edit button on the recipes or from the view recipe page
+    1. Recipes can be deleted by clicking edit or delete button on the recipes or from the view recipe page
 - I want to search the recipe database using keywords, recipe names and by course i.e. Breakfast, Lunch, Dinner
   - Again, users can use the search function on the recipes page to find recipes - the search function will look at the recipe's name, its category and ingedients and return relevant results if any
     1. User can search for a term and commence the search using the magnifying glass icon or clear the search and 'reset' the page using the refresh icon
   - I want to log out when I am finished using the site and clear session data
     1. When logged in, the navigation bar shows a log out option(only viewable by logged in users), clicking this logs the user out and redirects them to the log in page
 
+## Admin
+
+- I want to delete any user from the database
+ - From the view_users page, that is only accessible for admin, the admin can delete any user from the database
+- I want to delete any user's recipe from the database
+ - From the all_recipe page, the admin can delete any user's recipe from the database
 
 ## Further Testing
 
 - I have used Chrome Developer Tools to understand how the live Heroku app looks on different devices, I've also tested the app on my own Samsung S20+ device
 - I have viewed the app in different browsers such as Google Chrome, Samsung Internet, Microsoft Edge and Mozilla Firefox - I noticed the site loads slightly slower on Firefox compared to other browers
+- I have attempted to access the view_users page when not logged in or logged in as admin to ensure it cannot be force accessed - any user that is not the admin is redirected back to the landing page
 - I have tested the site by creating accounts, submitting, editing and deleting recipes to ensure there were no error when carrying out these actions
 - I have tested the links on the site to ensure no broken links, social media links in the foot redirect in new tabs so do not lead any from the site
 
@@ -189,7 +203,7 @@ I have completed testing alongside visitor goals, numbered points have been conf
 
 # Bugs/Known Issues
 
-The bugs below refer to the first site build, prior to my first re-submission:
+**The bugs below refer to the first site build, prior to my first re-submission:**
 
 - I was unable to implement a modal for a user to confirm they wanted to delete a recipe before it was deleted, I was not able to get the delete button within the accordian to pull up the modal. As such, this feature was removed
     1. When adding the modal button to the accordian, it produced a large amount of space in each accordian item but when clicking the button it did not retrieve the modal
@@ -201,6 +215,8 @@ The bugs below refer to the first site build, prior to my first re-submission:
 # Resolved Issues
 
 - When creating Procfile, I originally had typed 'web:python run.py' instead of 'web: python run.py'- this meant my Heroku app did not run and threw and Application Error, Cormac @ Code Institute spotted this and the issue resolved
+
+- By changing how the recipes are presented on the site, I was able to implement a modal for further defensive programming so it's less likely a user will delete their own recipe or profile by mistake
 
 - I added a function that allows users to delete their profiles, initally the user would be logged out and flashed a message telling them their profile had been deleted. However, through testing I discovered that you were still able to login using the 'deleted' user's credentials. I discovered this was due to a typo in the function, though it didn't throw and error - this now works correctly when changed to " mongo.db.users.remove({"username": username.lower()}) "
 

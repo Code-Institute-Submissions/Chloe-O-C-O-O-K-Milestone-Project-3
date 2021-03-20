@@ -219,7 +219,8 @@ def delete_profile(username):
 
 
 @app.route("/view_users")
-# Returns user list, admin is not counted as part of this and 'popped' from list #
+# Returns user list, admin is not counted#
+# as part of this and 'popped' from list #
 # If user is not 'admin' they will be redirected back to index #
 def view_users():
     users = list(
